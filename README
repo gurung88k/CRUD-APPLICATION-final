@@ -1,0 +1,29 @@
+Project Overview
+
+A Create, Read, Update, Delete (CRUD) web application built with **Express.js**, **MongoDB**, and **Mongoose**. It's utilized to manipulate records through a basic web interface. The app can be used for employee management, inventory tracking, or to-do lists.
+
+Why It's Useful
+
+The app simplifies data handling with a user-friendly interface. It organizes data better, reduces manual handling, and offers secure and validated storage with a structured database.
+
+Planned Features
+
+- User authentication through **bcrypt.js**
+- Token-based session handling using **JWT**
+- Environment variable handling with **dotenv**
+- Form validation through **express-validator**
+
+ Styling Approach
+
+I’m using **Bootstrap** for layout and responsiveness, combined with **custom CSS** to match the look and feel of the app’s purpose.
+
+Languages used  during development:
+- Node.js
+- Express.js
+- MongoDB + Mongoose
+- EJS
+- Bootstrap & CSS
+
+P.S: The reason I have less commits in this is beacause this is not the initial repository i created for the project, the earlier one got ruined so i had to make a new one.
+I'll be pasting the link for the old one below:
+ 
