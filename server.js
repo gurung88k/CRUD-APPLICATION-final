@@ -14,27 +14,27 @@ const PORT = process.env.PORT || 8080;
 
 app.use(morgan('tiny'));
 
-// ✅ Replace body-parser with built-in Express parser
+//Replace body-parser with built-in Express parser
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// ✅ Enable method override
+//  Enable method override
 app.use(methodOverride("_method"));
 
-// ✅ Set EJS as view engine
+//  Set EJS as view engine
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
-// ✅ Serve static assets
+// Serve static assets
 app.use('/css', express.static(path.resolve(__dirname, "assets/css")));
 app.use('/img', express.static(path.resolve(__dirname, "assets/img")));
 app.use('/js', express.static(path.resolve(__dirname, "assets/js")));
 
-// ✅ Mount routes
+//  Mount routes
 const router = require('./server/routes/router');
 app.use('/', router);
 
-// ✅ Start server
+//  Start server
 app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+      console.log(`Server is running on port ${PORT}`);
 });
