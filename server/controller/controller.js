@@ -6,7 +6,7 @@ const Userdb = require(fullPath);
 console.log("✅ Type of Userdb:", typeof Userdb);
 console.log("✅ Type of Userdb.find:", typeof Userdb.find);
 
-// ✅ Create and save new user
+//  Create and save new user
 exports.create = async (req, res) => {
   console.log("📥 Add User request received");
 
@@ -25,7 +25,7 @@ exports.create = async (req, res) => {
     const data = await user.save();
     console.log("✅ User created:", data);
 
-    res.redirect('/?success=created'); // ✅ redirect with query param
+    res.redirect('/?success=created'); // redirect with query param
   } catch (err) {
     console.error("❌ Error creating user:", err);
     res.status(500).send({
@@ -34,7 +34,7 @@ exports.create = async (req, res) => {
   }
 };
 
-// ✅ Retrieve and return all users / a single user
+// Retrieve and return all users / a single user
 exports.find = (req, res) => {
   if (req.query.id) {
     const id = req.query.id;
@@ -63,7 +63,7 @@ exports.find = (req, res) => {
   }
 };
 
-// ✅ Update an existing user
+// Update an existing user
 exports.update = (req, res) => {
   if (!req.body) {
     return res.status(400).send({ message: "Data to update cannot be empty" });
@@ -75,7 +75,7 @@ exports.update = (req, res) => {
       if (!data) {
         res.status(404).send({ message: `Cannot update user with id ${id}. Maybe user not found!` });
       } else {
-        res.redirect('/?success=updated'); // ✅ redirect with query param
+        res.redirect('/?success=updated'); //  redirect with query param
       }
     })
     .catch(err => {
@@ -84,7 +84,7 @@ exports.update = (req, res) => {
     });
 };
 
-// ✅ Delete a user by ID
+//  Delete a user by ID
 exports.delete = (req, res) => {
   const id = req.params.id;
 
@@ -93,7 +93,7 @@ exports.delete = (req, res) => {
       if (!data) {
         res.status(404).send({ message: `Cannot delete user with id ${id}. Maybe id is wrong` });
       } else {
-        res.redirect('/?success=deleted'); // ✅ redirect with query param
+        res.redirect('/?success=deleted'); //  redirect with query param
       }
     })
     .catch(err => {
