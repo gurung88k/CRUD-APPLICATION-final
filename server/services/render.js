@@ -8,7 +8,7 @@ exports.homeRoutes = (req, res) => {
       console.log("✅ Found users:", users.length);
       res.render('index', {
         users: users,
-        success: req.query.success // ✅ pass success message
+        success: req.query.success //  pass success message
       });
     })
     .catch(err => {
